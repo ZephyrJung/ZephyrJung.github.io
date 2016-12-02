@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
-  <title>纸小墨官方博客</title>
-  <id>http://www.chole.io/blog</id>
-  <updated>2016-11-28T18:03:10+08:00</updated>
-  <subtitle>构建只为纯粹书写的博客</subtitle>
-  <link href="http://www.chole.io/blog"></link>
+  <title>O型血橙</title>
+  <id>http://zephyr.b3log.org</id>
+  <updated>2016-12-02T11:40:57+08:00</updated>
+  <subtitle>不想做游戏的Java程序员不是好前端</subtitle>
+  <link href="http://zephyr.b3log.org"></link>
   <author>
-    <name>纸小墨官方博客</name>
+    <name>O型血橙</name>
   </author>
   <entry>
-    <title>简洁的静态博客构建工具 —— 纸小墨（InkPaper）</title>
+    <title>B3log开源组织——平等 自由 奔放</title>
     <updated>2016-07-11T17:00:00+08:00</updated>
-    <id>tag:www.chole.io,2016-07-11:/blog/ink-blog-tool.html</id>
-    <content type="html">&lt;p&gt;纸小墨（InkPaper）是一个GO语言编写的开源静态博客构建工具，可以快速搭建博客网站。它无依赖跨平台，配置简单构建快速，注重简洁易用与更优雅的排版。&lt;/p&gt;&#xA;</content>
-    <link href="http://www.chole.io/blog/ink-blog-tool.html"></link>
+    <id>tag:zephyr.b3log.org,2016-07-11:/b3log.html</id>
+    <content type="html">&lt;p&gt;平等、自由、奔放的开源社区，欢迎加入： &lt;a href=&#34;https://hacpai.com/article/1463025124998&#34;&gt;https://hacpai.com/article/1463025124998&lt;/a&gt;&lt;/p&gt;&#xA;</content>
+    <link href="http://zephyr.b3log.org/b3log.html"></link>
     <author>
-      <name>纸小墨</name>
-    </author>
-  </entry>
-  <entry>
-    <title>An Elegant Static Blog Generator —— InkPaper</title>
-    <updated>2016-07-11T17:00:00+08:00</updated>
-    <id>tag:www.chole.io,2016-07-11:/blog/ink-blog-tool-en.html</id>
-    <content type="html">&lt;p&gt;InkPaper is an static blog generator developed by Golang, No dependencies, Cross platform, Easy use, Fast build, Elegant theme.&lt;/p&gt;&#xA;</content>
-    <link href="http://www.chole.io/blog/ink-blog-tool-en.html"></link>
-    <author>
-      <name>纸小墨</name>
+      <name>Zephyr</name>
     </author>
   </entry>
 </feed>
