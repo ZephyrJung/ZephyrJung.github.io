@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>OTZephyr</title>
   <id>https://zephyrjung.github.io</id>
-  <updated>2019-08-02T15:27:10+08:00</updated>
+  <updated>2019-08-05T09:01:55+08:00</updated>
   <subtitle>生活不止眼前的代码，还有老婆和孩子</subtitle>
   <link href="https://zephyrjung.github.io"></link>
   <author>
     <name>OTZephyr</name>
   </author>
+  <entry>
+    <title>Mac开发环境初始化</title>
+    <updated>2019-08-05T17:00:00+08:00</updated>
+    <id>tag:zephyrjung.github.io,2019-08-05:/201908051.html</id>
+    <link href="https://zephyrjung.github.io/201908051.html" rel="alternate"></link>
+    <summary type="html">&lt;p&gt;初始化Mac开发环境，体验mac开发的优势&lt;/p&gt;&#xA;</summary>
+    <author>
+      <name>Zephyr Jung</name>
+    </author>
+  </entry>
   <entry>
     <title>简洁的静态博客构建工具 —— 纸小墨（InkPaper）</title>
     <updated>2016-07-11T17:00:00+08:00</updated>
