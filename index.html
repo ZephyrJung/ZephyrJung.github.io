@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>Mac开发环境推荐</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+<title>代码质量规范</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
 iframe { margin: auto; }
@@ -16,6 +16,7 @@ a:active, a:hover { outline: 0px; }
 .for-image #write { padding-left: 8px; padding-right: 8px; }
 body.typora-export { padding-left: 30px; padding-right: 30px; }
 .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
 @media screen and (max-width: 500px) { 
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
@@ -31,7 +32,7 @@ input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px;
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
 p { line-height: inherit; }
-h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
 p { orphans: 4; }
 h1 { font-size: 2rem; }
 h2 { font-size: 1.8rem; }
@@ -47,7 +48,7 @@ sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7019
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
-figure > table { margin: 0px !important; }
+figure > table { margin: 0px; }
 tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
@@ -82,17 +83,19 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
 #write .footnote-line { white-space: pre-wrap; }
 @media print { 
-  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; }
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
   .typora-export * { -webkit-print-color-adjust: exact; }
   html.blink-to-pdf { font-size: 13px; }
-  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid-page; }
+  .typora-export #write { break-after: avoid-page; }
   .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
 }
 .footnote-line { margin-top: 0.714em; font-size: 0.7em; }
 a img, img a { cursor: pointer; }
 pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
 p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
 p > .md-image:only-child { display: inline-block; width: 100%; }
 #write .MathJax_Display { margin: 0.8em 0px 0px; }
 .md-math-block { width: 100%; }
@@ -151,6 +154,9 @@ svg[id^="mermaidChart"] { line-height: 1em; }
 mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
 mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
 
 
 .CodeMirror { height: auto; }
@@ -233,12 +239,16 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
 
 @include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
 
-html {
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
     font-size: 16px;
 }
 
 body {
-    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: rgb(51, 51, 51);
     line-height: 1.6;
 }
@@ -249,6 +259,19 @@ body {
   	padding: 30px;
     padding-bottom: 100px;
 }
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
 #write > ul:first-child,
 #write > ol:first-child{
     margin-top: 30px;
@@ -303,17 +326,33 @@ h6 code {
     font-size: inherit;
 }
 h1 {
-    padding-bottom: .3em;
     font-size: 2.25em;
     line-height: 1.2;
     border-bottom: 1px solid #eee;
 }
 h2 {
-   padding-bottom: .3em;
     font-size: 1.75em;
     line-height: 1.225;
     border-bottom: 1px solid #eee;
 }
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
 h3 {
     font-size: 1.5em;
     line-height: 1.43;
@@ -576,7 +615,7 @@ header, .context-menu, .megamenu-content, footer{
  .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
 </style>
 </head>
-<body class='typora-export' >
-<div  id='write'  class = 'is-mac'><h3><a name="准备材料" class="md-header-anchor"></a><span>准备材料</span></h3><ol start='' ><li><p><span>Mac笔记本（可联网）</span><a href='https://item.jd.com/4331153.html' target='_blank' class='url'>https://item.jd.com/4331153.html</a></p></li><li><p><span>机械键盘 </span><a href='https://item.jd.com/3753188.html' target='_blank' class='url'>https://item.jd.com/3753188.html</a><span> </span></p><p><span>推荐茶轴、青轴。声音的问题一般不用太在意，因为正常情况下，工作时间，周围人讲话的声音绝对打过打字的声音。</span></p><p><span>款式因人而异，个人推荐带方向键不带数字区的键盘，大小合适。</span></p></li><li><p><span>秒控鼠标 </span><a href='https://item.jd.com/2187061.html' target='_blank' class='url'>https://item.jd.com/2187061.html</a><span> </span></p><p><span>减少鼠标移动，缓解手腕压力，使用体验总结起来就是两个字——优雅</span></p></li><li><p><span>显示器 未买，无推荐</span></p></li></ol><h3><a name="系统偏好设置" class="md-header-anchor"></a><span>系统偏好设置</span></h3><h4><a name="关闭访客" class="md-header-anchor"></a><span>关闭访客</span></h4><p><span>打开系统偏好设置，选择用户与群组，选择访客，点击关闭访客。</span></p><p><span>如此设置，可以避免电脑在启动时有用户选择的过程。</span></p><p><span>同时关闭Guest账户可以提高系统安全性。</span></p><h4><a name="外置键盘布局" class="md-header-anchor"></a><span>外置键盘布局</span></h4><p><span>打开系统偏好设置，选择键盘，点修饰键</span></p><p><span>选择键盘中外置键盘，交换Option键和Command键位置：</span></p><p><img src="Mac开发环境推荐.assets/image-20190719154108314.png" referrerpolicy="no-referrer" alt="image-20190719154108314"></p><p><span>因为windows键盘和mac键盘布局有差异，如此可以减少切换键盘时的小麻烦。使用机械键盘的话，还可以把键帽拔下来交换位置，更顺眼。</span></p><p><span>如果外置键盘本来就可以与笔记本内置键盘保持一致，则可忽略此步骤。</span></p><h4><a name="鼠标设置" class="md-header-anchor"></a><span>鼠标设置</span></h4><p><span>如果发现鼠标右键不起作用，可以尝试在系统偏好设置中，点击鼠标，勾选“辅助点按”：</span></p><p><img src="Mac开发环境推荐.assets/image-20190719154506373.png" referrerpolicy="no-referrer" alt="image-20190719154506373"></p><h4><a name="输入法设置" class="md-header-anchor"></a><span>输入法设置</span></h4><p><span>安装了输入法之后，可以再键盘设置中的输入法标签页里，删除系统带的中文输入法，保证</span><code>ctrl+space</code><span>能够在中英之间切换，否则可能出现搜狗中文切换到mac中文输入法的情况。</span></p><h4><a name="touchbar设置" class="md-header-anchor"></a><span>TouchBar设置</span></h4><p><span>点击下图标记的按钮</span></p><p><img src="Mac开发环境推荐.assets/image-20190719154750897.png" referrerpolicy="no-referrer" alt="image-20190719154750897"></p><p><span>可以看到touchbar上的按钮的自定义界面，鼠标拖动按钮往下即可拖放。</span></p><p><span>本人一般将锁屏、音量调节、亮度调节放到上面，比较常用。</span></p><h3><a name="软件列表" class="md-header-anchor"></a><span>软件列表</span></h3><blockquote><p><span>mac软件比较贵，有一些破解网站可提供下载，目前有两个选项：</span></p><ol start='' ><li><a href='https://www.ifunmac.com/?invite=zephyrjung' target='_blank' class='url'>https://www.ifunmac.com/?invite=zephyrjung</a><span> 收费</span></li><li><a href='https://xclient.info/' target='_blank' class='url'>https://xclient.info/</a><span> 免费</span></li></ol><p><span>免费版的出现过链接失效的情况，收费版一般都没问题。需要连接网盘，公司内网无法下载。</span></p></blockquote><h4><a name="办公软件" class="md-header-anchor"></a><span>办公软件</span></h4><p><span>Office系列，如Outlook、PowerPoint、Word、Excel，公司电脑一般预装。</span></p><h4><a name="通信工具" class="md-header-anchor"></a><span>通信工具</span></h4><p><span>QQ、微信、咚咚等</span></p><h4><a name="开发工具" class="md-header-anchor"></a><span>开发工具</span></h4><h5><a name="intellij-idea" class="md-header-anchor"></a><span>IntelliJ Idea</span></h5><p><span>破解激活 </span><a href='http://idea.lanyus.com/' target='_blank' class='url'>http://idea.lanyus.com/</a></p><p><span>最新版的host配置已经不是lanyus网站上所说的两个host，而是配置</span><code>0.0.0.0 https://account.jetbrains.com:443</code></p><p><span>能支持正版当然是最好的</span></p><ol start='' ><li><p><span>配置终端：默认是bash，可以改为zsh：</span></p><p><img src="Mac开发环境推荐.assets/image-20190719160236641.png" referrerpolicy="no-referrer" alt="image-20190719160236641"></p></li><li><p><span>推荐辅助插件：</span></p><ul><li><span>lombok</span></li><li><span>multihighlight 选择高亮插件，可以标记变量，有助于代码阅读</span></li><li><span>mybatis</span></li><li><span>GenerateAllSetter 一键调用一个对象的所有set方法</span></li><li><span>Grep console</span></li></ul></li><li><p><span>推荐快捷键设置</span></p><ul><li><span>split vertical </span><code>command+\</code><span> 将当前窗口纵向一分为二</span></li><li><span>open to opposite group </span><code>shit+command+\</code><span> 将当前窗口在另一侧打开（分屏情况下）</span></li><li><span>open recent projects: </span><code>command+shift+R</code><span> 快速打开最近打开过的项目</span></li><li><span>toggle vim mode: </span><code>contrl+command+;</code><span> 如果装有vim插件，可以切换vim模式</span></li><li><span>copy reference: </span><code>shift+command+C</code><span> 拷贝引用，拷贝一个类名时，会连带包名一起复制</span></li><li><span>Evaluate Expression </span><code>contrl+command+,</code><span> 调试时动态计算表达式</span></li></ul></li></ol><h5><a name="vscodiumvscode）" class="md-header-anchor"></a><span>VSCodium（VSCode）</span></h5><p><span>编辑器神器，之前一直用的sublime，但是sublime在linux下无法切换中文输入法，后转用VSCode，该有的功能都有。</span></p><p><span>VSCodium时VSCode的社区版，二者在功能上没有太大的区别。详见官网：</span><a href='http://vscodium.github.io/'><span>http://vscodium.github.io</span></a></p><p><span>特色插件（忽略语言支持插件）:</span></p><ul><li><a href='https://marketplace.visualstudio.com/items?itemName=bukas.GBKtoUTF8'><span>字符集转换</span></a></li><li><a href='https://marketplace.visualstudio.com/items?itemName=eriklynd.json-tools'><span>JSON美化/最小化</span></a></li><li><a href='https://marketplace.visualstudio.com/items?itemName=quicktype.quicktype'><span>JSON转换为代码结构</span></a></li><li><a href='https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml'><span>PlantUml</span></a></li><li><a href='https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode'><span>代码格式化</span></a></li><li><a href='https://marketplace.visualstudio.com/items?itemName=humao.rest-client'><span>Http请求</span></a></li><li><a href='https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines'><span>排序/去重</span></a></li></ul><p><span>常用快捷键：</span></p><ul><li><p><span>cmd+k+m：语法选择</span></p></li><li><p><span>cmd+shift+p：调出控制台</span></p><ul><li><span>Format 代码格式化</span></li><li><span>compare with 文件比较</span></li></ul></li></ul><h5><a name="jdgui" class="md-header-anchor"></a><span>jdGui</span></h5><p><span>反编译工具</span></p><p><a href='http://java-decompiler.github.io/' target='_blank' class='url'>http://java-decompiler.github.io/</a></p><p><span>jdk最高为8，9以上打不开。</span></p><h5><a name="jdk8" class="md-header-anchor"></a><span>jdk8</span></h5><p><span>目前大部分软件对于8的支持还是没问题的，8以上可能有各种问题，包括groovy、maven、jdgui，所以还是推荐安装jdk8而非最新版。</span></p><p><a href='https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html' target='_blank' class='url'>https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p><p><span>历史版本jdk下载需要登录Oracle账号</span></p><p><span>内网鲸盘下载：</span><a href='https://3.cn/pTfLLPE' target='_blank' class='url'>https://3.cn/pTfLLPE</a></p><h4><a name="效率工具" class="md-header-anchor"></a><span>效率工具</span></h4><h5><a name="chrome" class="md-header-anchor"></a><span>Chrome</span></h5><p><span>推荐插件：</span></p><ol start='' ><li><span>1Password extension，用1Password会提示安装</span></li><li><span>Adblock Plus 免费广告拦截</span></li><li><span>Copytables 能够按列按行复制网页上的表格文本</span></li><li><span>EditThisCookie cookie管理</span></li><li><span>JSON Formatter json格式化</span></li><li><span>Website IP 查看当前站点的ip地址，在右下方显示</span></li><li><span>掘金 标签页显示热点文章即github trending</span></li></ol><h5><a name="typora" class="md-header-anchor"></a><span>Typora</span></h5><p><span>实时Markdown编辑工具，本文就是用Typora写的</span></p><p><span>按照markdown语法编写文档时能够实时看到效果，界面简洁，功能强大</span></p><p><a href='https://typora.io/' target='_blank' class='url'>https://typora.io/</a></p><h5><a name="iterm" class="md-header-anchor"></a><span>iTerm</span></h5><p><span>终端工具，这里不针对该工具有何配置，主要是命令行环境：</span></p><ol start='' ><li><p><span>安装brew包管理工具: </span><a href='https://brew.sh/' target='_blank' class='url'>https://brew.sh/</a></p></li><li><p><span>安装oh-my-zsh: </span><a href='https://ohmyz.sh/' target='_blank' class='url'>https://ohmyz.sh/</a></p><p><span>zsh中包含了许多插件的配置，插件本身需要自行安装，推荐插件：</span></p><ul><li><p><code>git</code><span> 包含git命令的别名，如</span><code>git pull = gl</code><span>, </span><code>git checkout = gco</code><span> 等</span></p></li><li><p><code>autojump</code><span> 通过brew命令即可</span><a href='https://github.com/wting/autojump' target='_blank' class='url'>https://github.com/wting/autojump</a><span>，命令行环境下目录快速切换</span></p></li><li><p><code>autosuggestion</code><span> </span><a href='https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md' target='_blank' class='url'>https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md</a><span> 命令记忆和补全</span></p></li><li><p><span>配置常用软件的指令：</span></p><ul><li><span>alias typora=&#39;open -a typora&#39;</span></li><li><span>alias vscode=&#39;open -a VSCodium&#39;</span></li><li><span>alias jdgui=&#39;java -jar /Users/XXX/Documents/ToolSpace/jd-gui-1.6.3-min.jar&#39;</span></li></ul></li><li><p><span>主题推荐：</span><a href='https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html' target='_blank' class='url'>https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html</a></p></li></ul></li><li><p><span>vim配置高亮：</span></p><p><span>打开terminal复制/usr/share/vim/vimrc到家目录下并重命名为&quot;.vimrc&quot;,然后编辑该文件，增加以下几行</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">syntax on</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">set nu!</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">set autoindent</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre></li></ol><h5><a name="alfred" class="md-header-anchor"></a><span>Alfred</span></h5><p><span>效率神器，要安装高级版的，插件更全一些，最重要的两个插件是</span><code>Clipboard</code><span>和</span><code>Snippets</code></p><p><span>Clipboard可以记忆复制的文本，而Snippets可以设置一些常用文本的快捷输入</span></p><p><span>alfred我设置的快捷键是</span><code>command+space</code><span>，取代spotlight，需要在系统偏好设置中取消spotlight快捷键</span></p><p><img src="Mac开发环境推荐.assets/image-20190719163006594.png" referrerpolicy="no-referrer" alt="image-20190719163006594"></p><p><span>clipboard可以设置快捷键</span><code>shift+command+V</code></p><p><span>snippets设置快捷键</span><code>contral+p</code></p><p><span>快捷键设置依据个人喜好而定。</span></p><p><span>可以自定义workflow插件，如本人自己写了一个xml browser的插件：</span></p><p><img src="Mac开发环境推荐.assets/image-20190719163541274.png" referrerpolicy="no-referrer" alt="image-20190719163541274"></p><p><img src="Mac开发环境推荐.assets/image-20190719163556842.png" referrerpolicy="no-referrer" alt="image-20190719163556842"></p><p><img src="Mac开发环境推荐.assets/image-20190719163630858.png" referrerpolicy="no-referrer" alt="image-20190719163630858"></p><p><img src="Mac开发环境推荐.assets/image-20190719163352687.png" referrerpolicy="no-referrer" alt="image-20190719163352687"></p><p><span>可以在alfred中输入上面的指令，然后将快速打开指定的页面，传递的参数为123456</span></p><p><span>alfred可以搜索收藏夹，也很实用：</span></p><p><img src="Mac开发环境推荐.assets/image-20190926203335112.png" referrerpolicy="no-referrer" alt="image-20190926203335112"></p><h5><a name="switchhosts" class="md-header-anchor"></a><span>SwitchHosts！</span></h5><p><span>快速切换hosts配置 </span><a href='https://github.com/oldj/SwitchHosts' target='_blank' class='url'>https://github.com/oldj/SwitchHosts</a></p><h5><a name="1passwordlastpass" class="md-header-anchor"></a><span>1Password/LastPass</span></h5><p><span>密码填充工具，1Password更好用些，但是新版本的使用起来比较费劲，可以用LastPass代替，也能完成密码的填充。Chrome本身也可以。1Password的好处在于可以全面管理你的密码，提供多端支持，通过icloud同步。</span></p><h4><a name="系统辅助" class="md-header-anchor"></a><span>系统辅助</span></h4><h5><a name="window-tidy" class="md-header-anchor"></a><span>Window Tidy</span></h5><p><span>窗口管理软件，通过拖动来布局：</span></p><p><img src="Mac开发环境推荐.assets/image-20190719164451342.png" referrerpolicy="no-referrer" alt="image-20190719164451342"></p><p><span>将窗口拖动到预定义的这几个布局区域中，窗口就会按照设置来改变布局</span></p><h5><a name="magnet" class="md-header-anchor"></a><span>Magnet</span></h5><p><span>同样是窗口布局软件，不如上面的直观，但是有快捷键，能够迅速将窗口全屏或者从一个屏幕移动到另一个屏幕。</span></p><p><img src="Mac开发环境推荐.assets/image-20190719164655198.png" referrerpolicy="no-referrer" alt="image-20190719164655198"></p><h5><a name="clean-my-mac" class="md-header-anchor"></a><span>Clean My Mac</span></h5><p><span>系统清理软件，清理垃圾用</span></p><h5><a name="itsycal" class="md-header-anchor"></a><span>itsycal</span></h5><p><a href='https://www.mowglii.com/itsycal/' target='_blank' class='url'>https://www.mowglii.com/itsycal/</a></p><p><span>日期时间工具，比原生的好一些，能够看日历：</span></p><p><img src="Mac开发环境推荐.assets/image-20190719164914901.png" referrerpolicy="no-referrer" alt="image-20190719164914901"></p><h5><a name="contexts" class="md-header-anchor"></a><span>contexts</span></h5><p><span>比Docker展示的更清晰的侧边栏：</span></p><p><img src="Mac开发环境推荐.assets/image-20190722161040703.png" referrerpolicy="no-referrer" alt="image-20190722161040703"></p><p><span>其增强了系统原有的</span><code>command+Tab</code><span>的切换界面。系统自带的话只有大图标，当同一个应用开了多个窗口时不能很好的切换。</span></p><p><img src="Mac开发环境推荐.assets/image-20190722161129800.png" referrerpolicy="no-referrer" alt="image-20190722161129800"></p><p><span>应用内窗口切换</span><code>command</code><span>+1左边的键：</span></p><p><img src="Mac开发环境推荐.assets/image-20190722161528429.png" referrerpolicy="no-referrer" alt="image-20190722161528429"></p><h5><a name="pock" class="md-header-anchor"></a><span>Pock</span></h5><p><span>touchBar显示Dock</span></p><p><span>确实能显示，但是点击图标没有切换出应用，看未来版本是否能改进</span></p><p><a href='https://pock.dev/' target='_blank' class='url'>https://pock.dev/</a></p><p><span>最新消息，触控板已经可以切出应用，可以很好用了</span></p><p><span>使用时建议在首选项中，去掉如下设置：</span></p><p><img src="Mac开发环境推荐.assets/image-20191018091603396.png" referrerpolicy="no-referrer" alt="image-20191018091603396"></p><p><span>同时，通过自定义触控栏，将pock自带的esc键移除</span></p><h4><a name="其他" class="md-header-anchor"></a><span>其他</span></h4><h5><a name="charles" class="md-header-anchor"></a><span>Charles</span></h5><p><span>不怎么用，略</span></p><h3><a name="日常使用约定" class="md-header-anchor"></a><span>日常使用约定</span></h3><ol start='' ><li><p><span>工具、软件的安装配置，统一使用默认配置，如maven的settings.xml，放到</span><code>/Users/username/.m2/</code><span>下面，repository同理</span></p></li><li><p><span>专业相关目录，按照来源和用途分类为：</span></p><ul><li><p><span>GithubSpace：存放所有从github克隆的代码，Gitlab、Gitee等以此类推</span></p></li><li><p><span>ToolSpace：存放所有中间件、工具项目，如maven、jd-gui、spring-shell</span></p><ul><li><span>bin：存放自定义的可执行程序、脚本，这个目录将写进PATH环境变量</span></li><li><span>shell：存放自定义的shell脚本（不需要在默认环境下执行的）</span></li></ul></li><li><p><span>WorkSpace：存放工作代码</span></p></li></ul></li></ol></div>
+<body class='typora-export'>
+<div id='write'  class=''><h4><a name="基本要求" class="md-header-anchor"></a><span>基本要求</span></h4><ol><li><span>单词拼写正确</span></li><li><span>命名统一，统一业务语义的名称使用同样命名</span></li><li><span>代码格式化</span></li><li><span>清理未使用包</span></li><li><span>类名使用大驼峰，方法名、参数名、成员变量、局部变量等小驼峰</span></li><li><span>常量名全大写，下划线分隔，反应业务语义，不怕长</span></li><li><span>命名要有业务含义，避免使用通用名称如i、map或者EMPTY_STR等</span></li><li><span>禁止使用魔法值，如果临时么有明确命名，应当写好注释。特殊值除外（无业务用途情况下）</span></li><li><span>使用合理的日志输出级别，如错误信息或者catch中使用error，可忽略的错误信息使用warn，一般信息使用info，调试信息使用debug（仅限本地调试用）</span></li><li><span>待补充...</span></li></ol><h4><a name="进阶要求" class="md-header-anchor"></a><span>进阶要求</span></h4><ol><li><span>避免大方法，方法内逻辑过长，应当按照业务划分代码块，抽取为小方法，通过方法名反应功能而非注释</span></li><li><span>避免多层大括号嵌套，合理利用if条件反转（注意不能影响原有逻辑顺序）</span></li><li><span>更多规范，参考阿里开发规范文档</span></li></ol><h4><a name="测试文档" class="md-header-anchor"></a><span>测试文档</span></h4><p><span>新增接口，需添加对应的http测试文档</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="http"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="http"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">POST</span> <span class="cm-string-2">http://example.com/comments</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-error">content-type: application/json</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"name":"samele",</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">"time":"2020-10-10 12:32:51"</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 154px;"></div><div class="CodeMirror-gutters" style="display: none; height: 154px;"></div></div></div></pre><p><span>Idea提供测试文档生成能力，主要需要补充不同的测试用例，以对接口的功能的正确性有基本保证，便于日后逻辑修改或者重构的回归验证。（Swagger只能提供测试，但是无法保留测试用例，测试用例是最需要有的）</span></p><h4><a name="http接口定义" class="md-header-anchor"></a><span>HTTP接口定义</span></h4><p><span>resource请求: /api/{module}/{biz} </span></p><p><span>queryList: /api/{module}/{biz}/list</span></p><p><span>queryForOne: /api/{module}/{biz}/get</span></p><p><span>insert: /api/{module}/{biz}/(put|post|create|upload|insert)</span></p><p><span>batchInsert: /api/{module}/{biz}/batch/(put|post|create|upload|insert)</span></p><p><span>delete: /api/{module}/{biz}/(delete|remove)</span></p><p><span>batchDelete: /api/{module}/{biz}/batch/(delete|remove)</span></p><p>&nbsp;</p><p><span>按照</span><code>基础路径</code><span>+</span><code>模块</code><span>+</span><code>操作对象</code><span>+</span><code>操作</code><span>对url做划分，避免大串单词直接拼接</span></p><h4><a name="mapper方法规范" class="md-header-anchor"></a><span>Mapper方法规范</span></h4><ol><li><span>每个表有单独的Mapper文件，定义表的基本操作</span></li></ol><ol start='2' ><li><span>禁止使用框架生成代码</span></li><li><span>只写用到的操作，sql中的变量明确的，对应入参也应该是明确的，禁止使用map或者大对象代替</span></li><li><span>表名应有下划线分隔，字段名同理，表名应为单数形式</span></li><li><span>分页查询之外的业务查询逻辑，关联通过java代码实现，sql中避免连表查询，避免模糊查询</span></li><li><span>如有分页查询之类，必须通过关联查询的sql，单独创建mapper，放到单独的位置，具体问题具体分析</span></li></ol><p>&nbsp;</p></div>
 </body>
 </html>
